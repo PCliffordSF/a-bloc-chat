@@ -1,6 +1,4 @@
-console.log("outside config setup");
 (function(){
-    console.log("inside config setup");
     function config($stateProvider, $locationProvider) {
         
         $locationProvider
@@ -9,10 +7,10 @@ console.log("outside config setup");
             requireBase: false
         });
         $stateProvider
-            .state('mainview' /* state name part*/, {
+            .state('home' /* state name part*/, {
                 url: '/',
-                // controller: 'mainviewCtrl as mainview',
-                templateUrl: '/templates/mainview.html' /*state config part*/
+                controller: 'HomeCtrl as home',
+                templateUrl: '/templates/home.html' /*state config part*/
             })
 
     }
