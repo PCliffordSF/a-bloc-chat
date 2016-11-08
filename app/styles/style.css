@@ -1,0 +1,27 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.left-panel {
+    margin: 0 0 0 0;
+    padding-top: 25px;
+    width: 300px;
+    height: 650px;
+    background-color: SteelBlue;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.room-list {
+    list-style: none;
+    font-size: 24px;
+}
+
+.room-list:hover {
+    cursor: pointer;
+}
