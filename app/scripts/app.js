@@ -18,5 +18,4 @@
     angular
         .module('aBlocChat', ['ui.router', 'firebase'])
         .config(config);
-    
 })();

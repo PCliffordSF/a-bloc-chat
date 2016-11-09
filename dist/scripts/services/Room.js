@@ -1,10 +1,10 @@
 (function() {
   function Room($firebaseArray) {
-      var firebaseRef = new Firebase('ablocchat.firebaseio.com');
-      console.log(firebaseRef);
-    // var ref = firebaseRef.database().ref().child("rooms");
-    var rooms = $firebaseArray(firebaseRef.child('rooms'));
-    // var rooms = ["livingroom", "bedroom"];
+   
+     var ref = firebase.database().ref();
+    var rooms = $firebaseArray(ref.child("rooms"));
+    // rooms.$add("closet2");
+    // var rooms = ["bedroom", "bathroom", "outhouse"]
     
     return {
         all: rooms

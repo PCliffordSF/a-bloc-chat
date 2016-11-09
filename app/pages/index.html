@@ -3,21 +3,40 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>A Bloc Chat Project</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//angular-ui.github.io/bootstrap/ui-bootstrap-1.3.2-csp.css">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     
     <ui-view></ui-view>
+
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCx6jncxSe3m1klCbCQ30RXGbwUH-wtil4",
+            authDomain: "ablocchat.firebaseapp.com",
+            databaseURL: "https://ablocchat.firebaseio.com",
+            storageBucket: "ablocchat.appspot.com",
+            messagingSenderId: "40405869933"
+          };
+          firebase.initializeApp(config);
+    </script>
     
-    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+     <!--<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>-->
     
-     <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
-    
-    <!--<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.js"></script>-->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>-->
+
 </body>
 </html>
+
+
+
