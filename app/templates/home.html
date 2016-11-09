@@ -1,13 +1,15 @@
-<section class="left-panel">
-    
+
+<main>
+   <section class="left-panel">
     <h1>Bloc Chat</h1>
     <div ng-repeat="room in home.rooms">
         <ul class="room-list">
-            <li>{{ room }}</li>
+            <li class="list-item">{{ room.$value }}</li>
         </ul>
     </div>
+</section> 
+</main>
 
-</section>
 
 
 
