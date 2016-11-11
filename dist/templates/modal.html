@@ -1,5 +1,5 @@
-<div ng-controller="ModalCtrl as $ctrl" class="modal-demo">
-    <script type="text/ng-template" id="myModalContent.html">
+<div ng-controller="ModalInstanceCtrl as $ctrl" class="modal-content">
+
         <div class="modal-header">
             <h3 class="modal-title" id="modal-title">Create A Room</h3>
         </div>
@@ -8,9 +8,9 @@
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.createRooomm()">Create Room</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.createRooom()">Create Room</button>
         </div>
-    </script>
+
 
     <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Open me!</button>
 

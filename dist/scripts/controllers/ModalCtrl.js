@@ -7,13 +7,13 @@
     
       $ctrl.open = function (size, parentSelector) {
         var parentElem = parentSelector ? 
-          angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+          angular.element($document[0].querySelector('.modal-content ' + parentSelector)) : undefined;
           
         var modalInstance = $uibModal.open({
           animation: $ctrl.animationsEnabled,
           ariaLabelledBy: 'modal-title',
           ariaDescribedBy: 'modal-body',
-          templateUrl: 'myModalContent.html',
+          templateUrl: 'modal.html',
           controller: 'ModalInstanceCtrl',
           controllerAs: '$ctrl',
           size: size,
@@ -25,37 +25,8 @@
           }
         });
         
-        $ctrl.createRooomm = function(room) {
-          
-          
-        }
-    
-      modalInstance.result.then(function (selectedItem) {
-          $ctrl.newRoom = selectedItem;
-        }, function () {
-          $log.info('Modal dismissed at: ' + new Date());
-        });
       };
-    
-      $ctrl.openComponentModal = function () {
-        var modalInstance = $uibModal.open({
-          animation: $ctrl.animationsEnabled,
-          component: 'modalComponent',
-          resolve: {
-            items: function () {
-              return $ctrl.items;
-            }
-          }
-        });
-    
-        modalInstance.result.then(function (selectedItem) {
-          $ctrl.newRoom = selectedItem;
-        }, function () {
-          $log.info('modal-component dismissed at: ' + new Date());
-        });
-      };
-    
-    
+        
       $ctrl.toggleAnimation = function () {
         $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
       };
