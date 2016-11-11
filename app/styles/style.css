@@ -4,17 +4,30 @@ body {
 }
 
 .left-panel {
+    padding-right: 0;
     margin: 0 0 0 0;
     padding-top: 25px;
-    width: 300px;
+    width: 350px;
     height: 650px;
     background-color: SteelBlue;
 }
 
+.right-panel {
+    margin: 0 0 0 0;
+    padding-top: 25px;
+    width: 100px;
+    display: inline;
+    height: 650px;
+    background-color: green;
+}
+
 h1 {
     margin: 0;
+    margin-left: 35px;
     font-size: 32px;
     text-align: center;
+    width: 250px;
+    display: inline;
 }
 
 .room-list {
@@ -29,4 +42,9 @@ h1 {
 .list-item {
     padding-top: 15px;
     padding-left: 25px;
+}
+
+.btn {
+    margin-left: 15px;
+    cursor: pointer;
 }

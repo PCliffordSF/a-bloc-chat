@@ -5,6 +5,6 @@
  
      angular
          .module('aBlocChat')
-         .controller('HomeCtrl', ['Room', HomeCtrl]); // injects both Fixtures SongPlayer and AlbumCtrl callback
+         .controller('HomeCtrl', ['Room', HomeCtrl]); 
  })();
  
