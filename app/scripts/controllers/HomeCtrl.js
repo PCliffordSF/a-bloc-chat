@@ -1,12 +1,23 @@
  (function() {
-     function HomeCtrl(Room) {
+     function HomeCtrl(Room, $modal) {
         this.rooms = Room.all;
-     }
-     
-     //create room modal function
+        
+        
+        this.openModal = function() {
+         $modal.open({
+           templateUrl: 'templates/modal.html',
+           controller: 'ModalCtrl',
+           size: 'sm'
+         })
+        }
+        
+        // this.changeRoom = function() {
+        //   console.log('room was clicked!');
+        // };
+    }
  
      angular
          .module('aBlocChat')
-         .controller('HomeCtrl', ['Room', HomeCtrl]); 
+         .controller('HomeCtrl', ['Room', '$modal', HomeCtrl]); 
  })();
  

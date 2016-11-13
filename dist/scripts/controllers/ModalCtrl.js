@@ -1,39 +1,27 @@
  (function() {
-     console.log("inside modal")
-     function ModalCtrl(Room, $uibModal, $document) {
-      var $ctrl = this;
-    
-      $ctrl.animationsEnabled = true;
-    
-      $ctrl.open = function (size, parentSelector) {
-        var parentElem = parentSelector ? 
-          angular.element($document[0].querySelector('.modal-content ' + parentSelector)) : undefined;
+     function ModalCtrl($scope, $modalInstance, Room) {
+      
+        $scope.newRoom = {};
+        
+        $scope.createRooom = function() {
+          console.log("inside createRoom");
           
-        var modalInstance = $uibModal.open({
-          animation: $ctrl.animationsEnabled,
-          ariaLabelledBy: 'modal-title',
-          ariaDescribedBy: 'modal-body',
-          templateUrl: 'modal.html',
-          controller: 'ModalInstanceCtrl',
-          controllerAs: '$ctrl',
-          size: size,
-          appendTo: parentElem,
-          resolve: {
-            items: function () {
-              return $ctrl.items;
-            }
-          }
-        });
+          newRoom = $scope.roomName;
+          console.log(newRoom);
+          
+          Room.addRoom();
+          
+        }
         
-      };
-        
-      $ctrl.toggleAnimation = function () {
-        $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
-      };
-    };
-    
+        $scope.cancel = function(){
+          $modalInstance.close('cancel');
+        };
+     }
+     
+  
+     
      angular
          .module('aBlocChat')
-         .controller('ModalCtrl', ['Room', '$uibModal', '$document', ModalCtrl]);
+         .controller('ModalCtrl', ['$scope', '$modalInstance', 'Room', ModalCtrl]);
  })();
  

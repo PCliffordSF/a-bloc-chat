@@ -3,7 +3,7 @@
     <div class="left-panel">
        <div class="header">
            <h1>Bloc Chat</h1>
-            <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Open me!</button>
+            <button type="button" class="btn btn-default" ng-click="home.openModal()">Open me!</button>
        </div>
         <div ng-repeat="room in home.rooms">
             <ul class="room-list">
@@ -11,10 +11,6 @@
             </ul>
         </div>
     </div> 
-    <div class="right-panel">
-        <ng-include src="'/templates/modal.html'"></ng-include>
-        <p>this is the modal part</p>
-    </div>
 </main>
 
 
