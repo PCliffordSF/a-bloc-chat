@@ -1,24 +1,17 @@
  (function() {
      function ModalCtrl($scope, $modalInstance, Room) {
-      
-        $scope.newRoom = {};
-        
-        $scope.createRooom = function() {
-          console.log("inside createRoom");
-          
-          newRoom = $scope.roomName;
-          console.log(newRoom);
-          
-          Room.addRoom();
-          
+
+        $scope.createRoom = function() {
+          Room.addRoom($scope.roomName).then(function(){
+            $scope.newRoom.name = '';
+            $modalInstance.close();
+          });
         }
         
         $scope.cancel = function(){
           $modalInstance.close('cancel');
         };
      }
-     
-  
      
      angular
          .module('aBlocChat')
