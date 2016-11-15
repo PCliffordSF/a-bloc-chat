@@ -1,11 +1,10 @@
 (function() {
   function Message($firebaseArray) {
     var ref = firebase.database().ref().child("messages");
-    // var messages = $firebaseArray(ref);
+    var messages = $firebaseArray(ref);
     
-    var Message = {};
     
-    Message.messages = [ {
+    var arrayOfMessages = [ {
         username: "Paul Clifford",
         content: "This is a test message",
         sentAt: "This is the time sent",
@@ -16,14 +15,30 @@
         content: "This is another test message",
         sentAt: "This is the time sent",
         roomId: "Room ID"
+        },
+                {
+        username: "PC",
+        content: "Message in the closet",
+        sentAt: "This is the time sent",
+        roomId: "-KWYhnxpVqz9l4yFNkli"
         }
       ];
       
-    Message.getByRoomId = function (roomId) {
+    // messages.$add(Message.messages);
+      
+    var getByRoomId = function (roomId) {
       // Filter the messages by their room ID.
     }
+    
+    var addMessage = function(message) {
+      messages.$add(message);
+    }
       
-    return Message;
+    return {
+      arrayOfMessages: arrayOfMessages,
+      getByRoomId: getByRoomId,
+      addMessage: addMessage
+    }
     };
 
   angular

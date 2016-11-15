@@ -15,8 +15,11 @@
         <div class="right-panel">
             <h1>{{ home.currentRoom.$value }}</h1>
             <div class="message-container">
-                <ul>
-                    <li ng-repeat="message in home.messages">{{ home.messages }}</li>
+                <ul class="room-list">
+                    <li ng-repeat="message in home.messages" class="list-item">
+                        {{ message.username }}: <br>
+                        {{ message.content }}
+                    </li>
                 </ul>
             </div>
         </div>
