@@ -1,16 +1,26 @@
 
 <main>
-    <div class="left-panel">
-       <div class="header">
-           <h1>Bloc Chat</h1>
-            <button type="button" class="btn btn-primary" ng-click="home.openModal()">Open me!</button>
-       </div>
-        <div ng-repeat="room in home.rooms">
-            <ul class="room-list">
-                <li class="list-item">{{ room.$value }}</li>
-            </ul>
+    <div class="panels">
+        <div class="left-panel">
+           <div class="header">
+               <h1>Bloc Chat</h1>
+                <button type="button" class="btn btn-primary" ng-click="home.openModal()">Add A Room</button>
+           </div>
+            <div class="room-container">
+                <ul class="room-list">
+                    <li ng-repeat="room in home.rooms" class="list-item" ng-click="home.setCurrentRoom(room)">{{ room.$value }}</li>
+                </ul>
+            </div>
+        </div> 
+        <div class="right-panel">
+            <h1>{{ home.currentRoom.$value }}</h1>
+            <div class="message-container">
+                <ul>
+                    <li ng-repeat="message in home.messages">{{ home.messages }}</li>
+                </ul>
+            </div>
         </div>
-    </div> 
+    </div>
 </main>
 
 

@@ -1,8 +1,9 @@
  (function() {
-     function HomeCtrl(Room, $modal) {
+     function HomeCtrl(Room, Message, $modal) {
         this.rooms = Room.all;
-        
-        
+        this.messages = Message.messages;
+        this.currentRoom = '';
+
         this.openModal = function() {
          $modal.open({
            templateUrl: 'templates/modal.html',
@@ -11,13 +12,19 @@
          })
         }
         
-        // this.changeRoom = function() {
-        //   console.log('room was clicked!');
-        // };
+        this.setCurrentRoom = function(room) {
+           this.currentRoom = room;
+           console.log(this.currentRoom);
+        }
+        
+        
+        
+        
+
     }
  
      angular
          .module('aBlocChat')
-         .controller('HomeCtrl', ['Room', '$modal', HomeCtrl]); 
+         .controller('HomeCtrl', ['Room', 'Message', '$modal', HomeCtrl]); 
  })();
  
