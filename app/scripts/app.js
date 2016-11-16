@@ -16,6 +16,6 @@
     }
 
     angular
-        .module('aBlocChat', ['ui.router', 'firebase', 'ui.bootstrap'])
+        .module('aBlocChat', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
         .config(config);
 })();
