@@ -1,11 +1,10 @@
  (function() {
      function HomeCtrl(Room, Message, $modal) {
-      console.log(Room);
-      console.log(Message.addMessage);
         this.rooms = Room.all;
-        this.messages = Message.arrayOfMessages;
-        this.addMessage = Message.addMessage;
+        this.getByRoomById = Message.getByRoomId;
         this.currentRoom = '';
+        this.messages = '';
+        
 
         this.openModal = function() {
          $modal.open({
@@ -17,7 +16,10 @@
         
         this.setCurrentRoom = function(room) {
            this.currentRoom = room;
+           this.messages = this.getByRoomById(room.$id);
         }
+        
+        
         
         this.getDateTime = function() {
 
@@ -44,20 +46,17 @@
      }
      
      ///////////////
-     var mess = {
-        username: "PC",
-        content: "Message stays in the closet",
-        sentAt:  this.getDateTime(),
-        roomId: "-KWYhnxpVqz9l4yFNkli"
-        }
+     // var mess = {
+     //    username: "PC",
+     //    content: "Message stays in the bedroom",
+     //    sentAt:  this.getDateTime(),
+     //    roomId: "-KWYhpoCVUUnMB8rbxYH"
+     //    };
  
+
+
      
-     this.addMessage(mess);
-     
-     
-     
-     
-     
+     // this.addMessage(mess);
      
      //////////////////////////
     }
