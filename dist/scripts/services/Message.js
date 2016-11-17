@@ -11,6 +11,7 @@
     var addMessage = function(message) {
       messages.$add(message);
     }
+    
       
     return {
       getByRoomId: getByRoomId,

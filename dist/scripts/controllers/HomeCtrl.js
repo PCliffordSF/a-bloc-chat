@@ -1,10 +1,11 @@
  (function() {
-     function HomeCtrl(Room, Message, $modal) {
+     function HomeCtrl(Room, Message, $modal, $cookies) {
         this.rooms = Room.all;
         this.getByRoomById = Message.getByRoomId;
         this.addMessage = Message.addMessage;
         this.currentRoom = '';
-        this.messages = '';
+        this.newMessage = {};
+        
         
 
         this.openModal = function() {
@@ -19,14 +20,7 @@
            this.currentRoom = room;
            this.messages = this.getByRoomById(room.$id);
         }
-        
-        this.sendMessage = function(message) {
-            // this.addMessage(message);
-            console.log("message send");
-        }
-        
-        
-        
+       
         this.getDateTime = function() {
 
           var date = new Date();
@@ -49,7 +43,19 @@
           day = (day < 10 ? "0" : "") + day;
       
           return month + "-" + day + "-" + year + " " + hour + ":" + min + ":" + sec;
-     }
+         }
+     
+        this.sendMessage = function(message) {
+          this.newMessage.username = $cookies.get('aBlocChatCurrentUser');
+          this.newMessage.content = message;
+          this.newMessage.sentAt = this.getDateTime();
+          this.newMessage.roomId = this.currentRoom.$id;
+          console.log(this.newMessage);
+          message.userMessage = '';
+        }
+     
+     
+     
      
      ///////////////
      // var mess = {
@@ -69,6 +75,6 @@
  
      angular
          .module('aBlocChat')
-         .controller('HomeCtrl', ['Room', 'Message', '$modal', HomeCtrl]); 
+         .controller('HomeCtrl', ['Room', 'Message', '$modal', '$cookies', HomeCtrl]); 
  })();
  
