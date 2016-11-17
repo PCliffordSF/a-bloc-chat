@@ -2,6 +2,7 @@
      function HomeCtrl(Room, Message, $modal) {
         this.rooms = Room.all;
         this.getByRoomById = Message.getByRoomId;
+        this.addMessage = Message.addMessage;
         this.currentRoom = '';
         this.messages = '';
         
@@ -17,6 +18,11 @@
         this.setCurrentRoom = function(room) {
            this.currentRoom = room;
            this.messages = this.getByRoomById(room.$id);
+        }
+        
+        this.sendMessage = function(message) {
+            // this.addMessage(message);
+            console.log("message send");
         }
         
         
