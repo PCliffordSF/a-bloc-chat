@@ -7,12 +7,15 @@
       return $firebaseArray(ref);
     }
 
-    // var addMessage = function(message) {
-    //   messages.$add(message);
-    // }
+    var addMessage = function(message) {
+      messages.$add(message);
+    }
+    
+  
       
     return {
       getByRoomId: getByRoomId,
+      addMessage: addMessage
     }
     };
 
