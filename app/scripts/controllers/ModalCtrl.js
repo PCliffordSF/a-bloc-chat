@@ -2,7 +2,6 @@
      function ModalCtrl($scope, $modalInstance, Room) {
          
         $scope.newRoom = {};
-
         $scope.createRoom = function() {
           Room.addRoom($scope.roomName).then(function(){
             $scope.newRoom.name = '';

@@ -10,6 +10,7 @@ body {
 
 .panels {
     display: inline-block;
+    width: 100%;
 }
 
 .left-panel {
@@ -17,8 +18,8 @@ body {
     margin: 0 0 0 0;
     padding-top: 25px;
     display: inline-block;
-    /*width: 35%;*/
-    min-width: 300px;
+    width: 35%;
+    min-width: 325px;
     height: 650px;
     background-color: SlateGrey;
 }
@@ -26,10 +27,11 @@ body {
 .right-panel {
     margin: 0 0 0 0;
     padding-top: 25px;
-    /*width: 30%;*/
+    width: 63%;
+    min-width: 500px;
     display: inline-block;
     height: 650px;
-    background-color: green;
+    background-color: LightGrey;
 }
 
 h1 {
@@ -41,21 +43,55 @@ h1 {
     display: inline;
 }
 
-.room-list {
+.list-item {
     list-style: none;
     font-size: 24px;
 }
 
-.room-list:hover {
+.room:hover {
     cursor: pointer;
 }
 
 .list-item {
        line-height: 4rem;
+}
+
+.message:nth-child(even) {
+    background-color: #eee;
     
+}
+
+.user-name {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.message-time {
+    float: right;
+    padding-right: 1rem;
+}
+
+.user-name {
+    text-transform: uppercase;
 }
 
 .btn {
     margin-left: 15px;
     cursor: pointer;
+}
+
+.footer {
+    display: inline-block;
+}
+
+.footer input{
+    display: inline-block;
+}
+
+.footer button{
+    display: inline-block;
+}
+
+.active {
+    color: purple;
 }
